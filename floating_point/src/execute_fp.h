@@ -77,10 +77,11 @@ SC_MODULE(execute_fp) {
     reg_forward_t forward;
 
     ac_int < XLEN, false > fcsr; // Control and status registers.
-    sc_out < ac_int < 32, false > > test_exefp_pc;
+    // sc_out < ac_int < 32, false > > test_exefp_pc;
     
     // Constructor
     SC_CTOR(execute_fp): din("din"), dout("dout"), fwd_exe("fwd_exe"), clk("clk"), rst("rst") {
+        std::cout << "Executing new " << name() << " at " << sc_time_stamp() << std::endl;
         SC_THREAD(executefp_th);
         sensitive << clk.pos();
         async_reset_signal_is(rst, false);

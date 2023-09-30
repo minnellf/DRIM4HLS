@@ -29,6 +29,7 @@
 #include "globals.h"
 
 #include <mc_connections.h>
+#include <ac_sysc_macros.h>
 
 SC_MODULE(writeback) {
     #ifndef __SYNTHESIS__

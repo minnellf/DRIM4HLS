@@ -27,6 +27,7 @@
 #include "globals.h"
 
 #include <mc_connections.h>
+#include <ac_sysc_macros.h>
 
 #pragma hls_design top
 SC_MODULE(drim4hls) {

@@ -220,7 +220,8 @@ int sc_main(int argc, char * argv[]) {
 
     //std::string testing_program = argv[1];
     // USE IN QUESTASIM
-    std::string testing_program = "/home/dpatsidis/Desktop/clean_repo/core/examples/fibonacci/fibonacci.txt";
+    // std::string testing_program = "./core/examples/fibonacci/fibonacci.txt";
+    std::string testing_program = "./core/examples/binary_search/hello.txt";
 
     Top top("top", testing_program);
     sc_start();

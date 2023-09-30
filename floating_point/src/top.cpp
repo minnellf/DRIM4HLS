@@ -63,7 +63,9 @@ class Top: public sc_module {
     m_dut("drim4hls"),
     testing_program(testing_program) {
         
+        std::cout << "PROVA" << std::endl;
         Connections::set_sim_clk( & clk);
+        std::cout << "PROVA1" << std::endl;
 
         // Connect the design module
         m_dut.clk(clk);
@@ -82,14 +84,17 @@ class Top: public sc_module {
         m_dut.wb2dmem_data(wb2dmem_ch);
 
         SC_CTHREAD(run, clk);
+        std::cout << "PROVA" << std::endl;
 
         SC_THREAD(imemory_th);
         sensitive << clk.posedge_event();
         async_reset_signal_is(rst, false);
+    std::cout << "PROVA" << std::endl;
 
         SC_THREAD(dmemory_th);
         sensitive << clk.posedge_event();
         async_reset_signal_is(rst, false);
+    std::cout << "PROVA2" << std::endl;
     }
 
     void imemory_th() {
@@ -177,6 +182,7 @@ class Top: public sc_module {
             }
 
             // REMOVE
+    std::cout << "PROVA" << std::endl;
             wait();
         }
 
@@ -184,6 +190,7 @@ class Top: public sc_module {
 
     void run() {
 
+        std::cout << "PROVA" << std::endl;
         std::ifstream load_program;
         load_program.open(testing_program, std::ifstream:: in );
         unsigned index;
@@ -207,10 +214,13 @@ class Top: public sc_module {
 
         load_program.close();
 
+        std::cout << "PROVA" << std::endl;
         rst.write(0);
         wait(5);
+        std::cout << "PROVA" << std::endl;
         rst.write(1);
         wait();
+        std::cout << "PROVA" << std::endl;
 
         do {
             wait();
@@ -256,9 +266,11 @@ int sc_main(int argc, char * argv[]) {
 
     //std::string testing_program = argv[1];
     // USE IN QUESTASIM
-    std::string testing_program = "/home/dpatsidis/Desktop/DRIM4HLS_fp_2/examples/matrix_mult_fp/matrix_mult.txt";
+    std::string testing_program = "./examples/binary_search/hello.txt";
 
+    std::cout << "PROVA" << std::endl;
     Top top("top", testing_program);
+    std::cout << "PROVA PRE" << std::endl;
     sc_start();
     return 0;
 }

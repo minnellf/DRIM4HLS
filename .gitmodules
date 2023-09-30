@@ -1,0 +1,9 @@
+[submodule "ac_simutils"]
+	path = ac_simutils
+	url = https://github.com/hlslibs/ac_simutils
+[submodule "ac_types"]
+	path = ac_types
+	url = https://github.com/hlslibs/ac_types
+[submodule "matchlib_connections"]
+	path = matchlib_connections
+	url = https://github.com/hlslibs/matchlib_connections

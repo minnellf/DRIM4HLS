@@ -32,6 +32,7 @@
 #include "globals.h"
 
 #include <mc_connections.h>
+#include <ac_sysc_macros.h>
 // Signed division quotient and remainder struct.
 struct div_res_t {
     sc_int < XLEN > quotient;
